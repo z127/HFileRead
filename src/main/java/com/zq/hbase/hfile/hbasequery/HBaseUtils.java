@@ -1,4 +1,4 @@
-package com.bdifn.hbase.hfile.version1;
+package com.zq.hbase.hfile.hbasequery;
 
 
 import org.apache.hadoop.conf.Configuration;

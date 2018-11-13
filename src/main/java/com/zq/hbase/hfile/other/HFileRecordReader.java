@@ -1,4 +1,4 @@
-package com.bdifn.hbase.hfile;
+package com.zq.hbase.hfile.other;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;

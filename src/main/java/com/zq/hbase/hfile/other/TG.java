@@ -1,4 +1,4 @@
-package com.bdifn.hbase.hfile;
+package com.zq.hbase.hfile.other;
 
 import java.io.IOException;
 import java.util.ArrayList;

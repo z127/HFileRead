@@ -1,4 +1,4 @@
-package com.bdifn.hbase.hfile;
+package com.zq.hbase.hfile.other;
 
 /**
  * Hello world!

@@ -1,7 +1,7 @@
-package com.bdifn.hbase.hfile.version1;
+package com.zq.hbase.hfile.hbasequery;
 
 
-import com.bdifn.hbase.hfile.HFileRecordReader;
+import com.zq.hbase.hfile.other.HFileRecordReader;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
