@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import static com.zq.hbase.hfile.hbasequery.HBaseUtils.querytable;
+
 
 public class HFileDemo {
 
@@ -24,16 +26,19 @@ public class HFileDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-
+       // originalParseData();
+        querytable("hbase:meta");
 
 	}
+
+
 
         public  static void     originalParseData() throws IOException {
             Configuration config = new Configuration();
             FileSystem fs = FileSystem.get(config);
             //指向你的hdfs下，hfile的正确目录，我是cp到了新的目录
             //Path path = new Path("/test/0a99d83b2b0a49c0adbc371d4bfe021e");
-            Path path = new Path("D:\\HbaseData\\Hbasedata\\hbase_student_cf1_00000");
+            Path path = new Path("D:\\619de7e2afec4175875e6e3407e54b3a");
             //Path path = new Path("H:\\HdumpData\\1abc");
             HFile.Reader reader = HFile.createReader(fs, path, new CacheConfig(config), config);
             HFileReaderV2  readerV2 = (HFileReaderV2) reader;
@@ -93,7 +98,6 @@ public class HFileDemo {
                   // String content=new String(kv.getRow())+HFileDemo.CONTENT_SEPARATOR+new String(kv.getFamily())+HFileDemo.CONTENT_SEPARATOR+new String(kv.getQualifier())+HFileDemo.CONTENT_SEPARATOR+new String(kv.getValue())+"\r\n";
                     String content=new String(kv.getRow())+HFileDemo.CONTENT_SEPARATOR+new String(kv.getValue())+"\r\n";
                     Buff.write(content.getBytes(),0,content.getBytes().length);
-
             }
 
             count ++;

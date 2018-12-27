@@ -34,7 +34,7 @@ public class DomParser {
         FsimageInode node=findRoot(nodeMap);
         HashMap<String,TableNode> tableNodeHashMap=new HashMap<String,TableNode>();
         //生成biao和block的映射
-        generateTableNode(node,tableNodeHashMap);
+        generateTableNode(node);
         System.out.println("root"+ node.toString());
     }
 
@@ -60,9 +60,10 @@ public class DomParser {
     /**
      * 建立表和block的映射
      * @param node
-     * @param tableNodeHashMap
+     *
      */
-    private static void generateTableNode(FsimageInode node, HashMap<String, TableNode> tableNodeHashMap) {
+    private static HashMap<String, TableNode> generateTableNode(FsimageInode node) {
+         HashMap<String, TableNode> tableNodeHashMap=new HashMap<String, TableNode>();
                FsimageInode nameSpaceNode=node.getChildMap().get("hbase").getChildMap().get("data").getChildMap().get("default");
                 Map<String,FsimageInode>  tableNode=  nameSpaceNode.getChildMap();
                Iterator iter= tableNode.entrySet().iterator();
@@ -79,7 +80,7 @@ public class DomParser {
                 }
           System.out.println(tableNodeHashMap);
           String tableName="hbase_student";
-         return;
+         return tableNodeHashMap;
     }
 
     /**
